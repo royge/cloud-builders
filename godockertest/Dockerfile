@@ -6,6 +6,8 @@ RUN curl -o go1.13.5.linux-amd64.tar.gz \
 RUN tar -C /usr/local/ -xzf go1.13.5.linux-amd64.tar.gz
 RUN export PATH=$PATH:/usr/local/go/bin
 
+RUN git config --global --add url."git@github.com:".insteadOf "https://github.com/"
+
 RUN rm go1.13.5.linux-amd64.tar.gz
 
 ENTRYPOINT ["/usr/local/go/bin/go"]
