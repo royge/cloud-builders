@@ -9,6 +9,6 @@ export GO111MODULE=on
 export CGO_ENABLED=1
 export PATH=$PATH:/usr/local/go/bin
 
-docker service start
+service start docker
 
 go "$@"
