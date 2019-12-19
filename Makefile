@@ -9,10 +9,10 @@ ifndef VERSION
 endif
 
 build: check-env
-	docker build --pull -t godockertest:latest ./godockertest
-	docker tag godockertest:latest gcr.io/$(PROJECT_ID)/godockertest:latest
-	docker tag godockertest:latest gcr.io/$(PROJECT_ID)/godockertest:$(VERSION)
+	docker build --pull -t dockergo:latest ./dockergo
+	docker tag dockergo:latest gcr.io/$(PROJECT_ID)/dockergo:latest
+	docker tag dockergo:latest gcr.io/$(PROJECT_ID)/dockergo:$(VERSION)
 
 push:
-	docker push gcr.io/$(PROJECT_ID)/godockertest:latest
-	docker push gcr.io/$(PROJECT_ID)/godockertest:$(VERSION)
+	docker push gcr.io/$(PROJECT_ID)/dockergo:latest
+	docker push gcr.io/$(PROJECT_ID)/dockergo:$(VERSION)
