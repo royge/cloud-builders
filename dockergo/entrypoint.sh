@@ -5,4 +5,8 @@ set -o errexit
 
 git config --global --add url."git@github.com:".insteadOf "https://github.com/"
 
-/usr/local/go/bin/go $1
+export GO111MODULE=on
+export CGO_ENABLED=1
+export PATH=$PATH:/usr/local/go/bin
+
+go $1
